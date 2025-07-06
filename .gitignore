@@ -1,0 +1,8 @@
+Drivers/
+Middlewares/
+
+*.o
+*.d
+*.elf
+*.bin
+*.hex
