@@ -18,85 +18,24 @@ PID pidR =
 //	  .out_xianfu = 7200.0
 };
 
-//PID pidbalance = 
-//{
-////   .kp = 3500.0,
-////   .ki = 0.0,
-////   .kd = -250.0,
-////   .out_xianfu = 7200.0
-//};
-
-//PID pidbalance = 
-//{
-//   .kp = 5600.0 * 0.6,
-//   .ki = 0.0,
-//   .kd = -450.0 * 0.6,
-//   .out_xianfu = 7200.0
-//};
-
-//PID pidspeed = 
-//{
-//    .kp = 500.0,
-//    .ki = 0.01,
-//    .kd = 0.0,
-//	  .integrate_xianfu = 1500.0,
-//	   .out_xianfu = 7000.0
-//};
-
-//完整版参数
-//PID pidbalance = 
-//{
-//   .kp = 4900.0  * 0.6,
-//   .ki = 0.0,
-//   .kd = -300.0  * 0.6,
-//   .out_xianfu = 7000.0
-//};
-
-//PID pidspeed = 
-//{
-//    .kp = 350.0,
-//    .ki = 1.75,
-//    .kd = 0.0,
-//	  .integrate_xianfu = 2000.0,
-//	   .out_xianfu = 7000.0
-//};
-
-
-//进一步调整
-//PID pidbalance = 
-//{
-//   .kp = 4800.0  * 0.6,
-//   .ki = 0.0,
-//   .kd = -307.0  * 0.6,
-//   .out_xianfu = 7000.0
-//};
-
-//PID pidspeed = 
-//{
-//    .kp = 385.0,
-//    .ki = 1.925,
-//    .kd = 0.0,
-//	  .integrate_xianfu = 2000.0,
-//	   .out_xianfu = 7000.0
-//};
-
 
 //重新调试
 PID pidbalance = 
 {
-   .kp = 4800.0  * 0.6,
+   .kp = 2300.0 * 0.6,
    .ki = 0.0,
-   .kd = -307.0  * 0.6,
-   .out_xianfu = 7000.0
+   .kd = -280.0 * 0.6,  //敏感型数据
+   .out_xianfu = 7200.0
 };
 
+//不敏感数据
 PID pidspeed = 
 {
-    .kp = 385.0,
-    .ki = 1.925,
+    .kp = 3500.0,
+    .ki = 17.5,
     .kd = 0.0,
 	  .integrate_xianfu = 2000.0,
-	   .out_xianfu = 7000.0
+	   .out_xianfu = 7200.0
 };
 
 
