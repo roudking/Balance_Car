@@ -1,8 +1,5 @@
 #include "Driver.h"
 
-//PID pidL = {25.0,5.0,0.0};
-//PID pidR = {25.0,5.0,0.0};
-
 
 void Driver_creatmotor(MOTOR *mymotor, PID pid, DRIVER_CONFIG driver)
 {
