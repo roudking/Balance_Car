@@ -22,20 +22,18 @@ PID pidR =
 //重新调试
 PID pidbalance = 
 {
-   .kp = 2450.0 * 0.6,
-   .ki = 0.0,
-   .kd = -285.0 * 0.6,  //敏感型数据
-   .out_xianfu = 7200.0
+   .kp = 2450.0 ,
+//    .ki = 0.0,
+//    .kd = -285.0 * 0.6,  //敏感型数据
 };
 
+//TODO: 调试速度PID
 //不敏感数据
 PID pidspeed = 
 {
-    .kp = 9000.0,
-    .ki = 45.0,
-    .kd = 0.0,
-	  .integrate_xianfu = 2000.0,
-	   .out_xianfu = 7200.0
+    // .kp = 9000.0,
+    // .ki = 45.0,
+    // .kd = 0.0,
 };
 
 
@@ -56,14 +54,7 @@ void Car_setSpeedTarget(CAR *car, float target) {
 }
 
 //死区处理
-// int dead_zone(float value, float deadzone,float dead_value) {
-//     if(value > deadzone)  return value + dead_value;
-//     else if(value < -deadzone)  return value - dead_value;
-//     else return 0;
-// }
-
-int dead_zone_comp(int pwm, int dz)
-{
+int dead_zone_comp(int pwm, int dz){
     if (abs(pwm) < dz) return 0;
     // 衔接平滑：减去死区大小
     return pwm > 0 ? pwm - dz : pwm + dz;
@@ -78,7 +69,7 @@ int Speed_PI(CAR *car) {
      static float last_speed = 0.0; //上次速度
      float alpha = 0.85; //滤波系数
       float current_speed = (car->motor1.currentspeed + car->motor2.currentspeed) / 2.0; //平均速度
-     current_speed = alpha * car->motor1.currentspeed + (1 - alpha) * last_speed; //滤波公式
+     current_speed = alpha * current_speed + (1 - alpha) * last_speed; //滤波公式
      last_speed = current_speed; //更新上次速度   
     //速度PID
     return positionPid_Cal(car->target_speed, current_speed, &car->speed_pid);
@@ -101,12 +92,11 @@ void Car_balance(CAR *car) {
         pidmemory_clear(&(car->speed_pid)); //清除速度PID的积分
     }
    
-
-
     total_pwm = balance_pwm + speed_pwm; //总PWM
     total_pwm = xianfu(total_pwm, -7200, 7200); // 限幅
-		     //死区处理
-    total_pwm = dead_zone_comp(total_pwm,2700);
+
+ //TODO: 删除死区		
+    // total_pwm = dead_zone_comp(total_pwm,2700); 
 
     //电机控制
     Driver_setmotorpwm(&(car->motor1), total_pwm,&(car->motor2), total_pwm);
