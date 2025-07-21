@@ -50,7 +50,7 @@ void Car_setBalanceAngle(CAR *car, float angle) {
 }
 
 void Car_setSpeedTarget(CAR *car, float target) {
-    car->target_speed = target;
+    car->speed_pid.integral += target; //更新积分
 }
 
 //死区处理
@@ -78,7 +78,7 @@ int Speed_PI(CAR *car) {
      current_speed = alpha * current_speed + (1 - alpha) * last_speed; //滤波公式
      last_speed = current_speed; //更新上次速度   
     //速度PID
-    return positionPid_Cal(car->target_speed, current_speed, &car->speed_pid);
+    return positionPid_Cal(0.0, current_speed, &car->speed_pid);
 }
 
 void Car_balance(CAR *car) {

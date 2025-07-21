@@ -19,9 +19,6 @@ void Mask_start(void) {
     //设置平衡角度
     Car_setBalanceAngle(&car, machine_zerovalue);
 
-    //设置速度目标
-    Car_setSpeedTarget(&car, 0.0);
-
     //设置平衡PID
     Car_setBalancePID(&car, pidbalance);
 
@@ -42,7 +39,7 @@ static void Mask_EXTIcallback(void) {
 
     //获取各种角度
      Mpu_getKalmandata(&(car.mpu));
-	
+
     //平衡控制
      Car_balance(&car);
 
