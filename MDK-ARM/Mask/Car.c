@@ -23,7 +23,7 @@ PID pidbalance =
 {
    .kp = 1200.0 * 0.6,
 //    .ki = 0.0,
-   .kd = -77.0 * 0.6,  //敏感型数据
+   .kd = -70.0 * 0.6,  //敏感型数据
 };
 
 //TODO: 调试速度PID
@@ -61,13 +61,19 @@ int dead_zone_comp(int pwm, int dz){
 }
 
 int Balance_PD(CAR *car) {
-    return (int)position_divAPI_PID_Cal(car->target_angle, car->mpu.pitch, car->mpu.mpu_data.gx, &(car->balance_pid));
+     static float last_pitch = 0.0; //上次角度
+    float beta = 0.85; //滤波系数
+    float current_pitch = car->mpu.pitch;
+    current_pitch = beta * current_pitch + (1 - beta) * last_pitch; //滤波公式
+    last_pitch = current_pitch; //更新上次角度
+
+    return (int)position_divAPI_PID_Cal(car->target_angle, current_pitch, car->mpu.mpu_data.gx, &(car->balance_pid));
 }   
 
 int Speed_PI(CAR *car) {
     //对输入速度进行低通滤波
      static float last_speed = 0.0; //上次速度
-     float alpha = 0.85; //滤波系数
+     float alpha = 0.80; //滤波系数
       float current_speed = (car->motor1.currentspeed + car->motor2.currentspeed) / 2.0; //平均速度
      current_speed = alpha * current_speed + (1 - alpha) * last_speed; //滤波公式
      last_speed = current_speed; //更新上次速度   
