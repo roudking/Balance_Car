@@ -10,16 +10,16 @@ typedef struct
     MOTOR motor1;
     MOTOR motor2;
 	MPU mpu;
+
     PID balance_pid;
-    float target_angle;
     PID speed_pid;
+        
+    float target_angle;
     float target_speed;
+
 }CAR;
 
-extern PID pidbalance;
-extern PID pidspeed;
-extern PID pidL;
-extern PID pidR;
+extern PID pidbalance, pidspeed, pidL, pidR;
 
 
 void Car_setBalancePID(CAR *car, PID pid);

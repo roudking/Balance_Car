@@ -125,11 +125,11 @@ static float Kalman_getAngle(KALMAN *Kalman, float newAngle, float newRate, floa
 };
 
 
+//TODO: kalmen计算帧率动态可调
 
-/// ���ڿ������˲�ʱ����������
 static uint32_t mpu_timer = 0;
 #define RAD_TO_DEG 57.295779513082320876798154814105
-
+double timer = 0.0;
 
 void Mpu_getKalmandata(MPU *mpu){
     uint8_t Rec_Data[14];
@@ -139,9 +139,9 @@ void Mpu_getKalmandata(MPU *mpu){
     Mpu_getdata_original(&(mpu->mpu_raw),mpu->config);
     Mpu_convert_raw_to_data(&(mpu->mpu_data),&(mpu->mpu_raw));
 
- //���� 4. �������ں� ����  
-    // 4.1 ����ʱ������ dt���룩
-    double dt = 0.005;
+        // Kalman angle solve
+    double dt = (double) (HAL_GetTick() - timer) / 1000;
+    timer = HAL_GetTick();
 
     // 4.2 ���ٶȼ�˲ʱ Roll/Pitch ����
     float roll_sqrt = sqrt(
