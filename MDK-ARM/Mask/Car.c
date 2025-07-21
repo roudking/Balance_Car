@@ -60,10 +60,12 @@ int dead_zone_comp(int pwm, int dz){
     return pwm > 0 ? pwm - dz : pwm + dz;
 }
 
+//直立环
 int Balance_PD(CAR *car) {
-    return (int)position_divAPI_PID_Cal(car->target_angle, car->mpu.pitch, car->mpu.mpu_data.gx, &(car->balance_pid));
+    return (int)positionPid_Cal(car->target_angle, car->mpu.pitch, &(car->balance_pid));
 }   
 
+//速度环
 int Speed_PI(CAR *car) {
     //对输入速度进行低通滤波
      static float last_speed = 0.0; //上次速度

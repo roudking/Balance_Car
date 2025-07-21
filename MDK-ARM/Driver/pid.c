@@ -42,7 +42,7 @@ double position_divAPI_PID_Cal(double targetvalue,double currentvalue,double cur
 }
 
 
-// 位置式 PID 计算函数（带输出限幅和积分抗饱和）
+// 位置式 PID 计算函数（带输出限幅和积分限幅）
 double positionPid_Cal(double targetvalue, double currentvalue, PID* pid) {
     
 	
