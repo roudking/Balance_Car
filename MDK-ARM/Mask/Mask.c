@@ -3,7 +3,7 @@
 static void Mask_EXTIcallback(void);
 
 CAR car;
-const float machine_zerovalue = 1.0;
+const float machine_zerovalue = 1.5;
 
 void Mask_start(void) {
     //电机初始化

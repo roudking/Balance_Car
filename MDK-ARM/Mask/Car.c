@@ -22,17 +22,17 @@ PID pidR =
 //重新调试
 PID pidbalance = 
 {
-   .kp = 2300.0 * 0.6,
+   .kp = 2450.0 * 0.6,
    .ki = 0.0,
-   .kd = -280.0 * 0.6,  //敏感型数据
+   .kd = -285.0 * 0.6,  //敏感型数据
    .out_xianfu = 7200.0
 };
 
 //不敏感数据
 PID pidspeed = 
 {
-    .kp = 3500.0,
-    .ki = 17.5,
+    .kp = 9000.0,
+    .ki = 45.0,
     .kd = 0.0,
 	  .integrate_xianfu = 2000.0,
 	   .out_xianfu = 7200.0
@@ -56,10 +56,17 @@ void Car_setSpeedTarget(CAR *car, float target) {
 }
 
 //死区处理
-int dead_zone(float value, float deadzone,float dead_value) {
-    if(value > deadzone)  return value + dead_value;
-    else if(value < -deadzone)  return value - dead_value;
-    else return 0;
+// int dead_zone(float value, float deadzone,float dead_value) {
+//     if(value > deadzone)  return value + dead_value;
+//     else if(value < -deadzone)  return value - dead_value;
+//     else return 0;
+// }
+
+int dead_zone_comp(int pwm, int dz)
+{
+    if (abs(pwm) < dz) return 0;
+    // 衔接平滑：减去死区大小
+    return pwm > 0 ? pwm - dz : pwm + dz;
 }
 
 int Balance_PD(CAR *car) {
@@ -86,9 +93,6 @@ void Car_balance(CAR *car) {
     //速度PID
     speed_pwm = -Speed_PI(car);
 
-     //死区处理
-    // total_pwm = dead_zone(total_pwm,300,300);
-
     } else {
         balance_pwm = 0;
         speed_pwm = 0;
@@ -101,6 +105,8 @@ void Car_balance(CAR *car) {
 
     total_pwm = balance_pwm + speed_pwm; //总PWM
     total_pwm = xianfu(total_pwm, -7200, 7200); // 限幅
+		     //死区处理
+    total_pwm = dead_zone_comp(total_pwm,2700);
 
     //电机控制
     Driver_setmotorpwm(&(car->motor1), total_pwm,&(car->motor2), total_pwm);
