@@ -28,7 +28,7 @@ PID pidbalance =
 
 //TODO: 调试速度PID
 //不敏感数据
-const double p = 900.0;
+const double p = 1000.0;
 PID pidspeed = 
 {
     .kp = p,
@@ -99,10 +99,13 @@ void Car_balance(CAR *car) {
     }
    
     total_pwm = balance_pwm + speed_pwm; //总PWM
+
+     //TODO: 删除死区		
+    total_pwm = dead_zone_comp(total_pwm,1000); 
+
     total_pwm = xianfu(total_pwm, -7200, 7200); // 限幅
 
- //TODO: 删除死区		
-    // total_pwm = dead_zone_comp(total_pwm,2700); 
+
 
     //电机控制
     Driver_setmotorpwm(&(car->motor1), total_pwm,&(car->motor2), total_pwm);
