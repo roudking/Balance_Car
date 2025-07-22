@@ -40,6 +40,9 @@
 "my_banlance_car\mpu6050_iic.o"
 "my_banlance_car\mask.o"
 "my_banlance_car\car.o"
+"my_banlance_car\beep.o"
+"my_banlance_car\beep_config.o"
+"my_banlance_car\beep_gpio.o"
 "..\Middlewares\ST\ARM\DSP\Lib\arm_cortexM3l_math.lib"
 --library_type=microlib --strict --scatter "My_Banlance_Car\My_Banlance_Car.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

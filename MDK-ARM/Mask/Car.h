@@ -3,12 +3,14 @@
 
 #include "Driver.h"
 #include "mpu6050.h"
+#include "Beep.h"
 #include "serial.h"
 
 typedef struct
 {
     MOTOR motor1;
     MOTOR motor2;
+    Beeper beeper;
 	MPU mpu;
 
     PID balance_pid;

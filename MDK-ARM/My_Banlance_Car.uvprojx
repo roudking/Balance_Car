@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE,ARM_MATH_CM3</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./Driver;./System;./Mask;./IMU;../Middlewares/ST/ARM/DSP/Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;./Driver;./System;./Mask;./IMU;../Middlewares/ST/ARM/DSP/Inc;.\Beep</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -713,6 +713,44 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Beep</GroupName>
+          <Files>
+            <File>
+              <FileName>Beep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Beep\Beep.c</FilePath>
+            </File>
+            <File>
+              <FileName>Beep.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Beep\Beep.h</FilePath>
+            </File>
+            <File>
+              <FileName>Beep_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Beep\Beep_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>Beep_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Beep\Beep_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>Beep_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Beep\Beep_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>Beep_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Beep\Beep_gpio.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
           <GroupName>Middlewares/Library/DSP Library/DSP Library</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -809,9 +847,6 @@
               </FileOption>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>

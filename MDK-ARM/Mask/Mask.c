@@ -18,6 +18,10 @@ void Mask_start(void) {
 	Mpu_init(&(car.mpu));
     Debugger_printf("MpuInitCplt\n");
 
+    //蜂鸣器初始化
+    Beep_create(&(car.beeper), beep_config);
+    Debugger_printf("BeepInitCplt\n");
+
     //设置平衡角度
     Car_setBalanceAngle(&car, machine_zerovalue);
 
