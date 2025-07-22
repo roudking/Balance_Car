@@ -3,7 +3,7 @@
 static void Mask_EXTIcallback(void);
 
 CAR car;
-const float machine_zerovalue = -1.5;
+const float machine_zerovalue = -1.2;
 
 void Mask_start(void) {
     //电机初始化
@@ -45,8 +45,7 @@ static void Mask_EXTIcallback(void) {
     //平衡控制
      Car_balance(&car);
 
-	// Debugger_printf("%.3f\n", car.mpu.pitch);	
-
+    Car_setSpeedTarget(&car, 1.3); //设置目标速度
 
     //清除MPU中断标志位
     Mpu_clearinterrupt(&(car.mpu));	
