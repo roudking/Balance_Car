@@ -23,12 +23,12 @@ PID pidbalance =
 {
    .kp = 1200.0 * 0.6,
 //    .ki = 0.0,
-   .kd = -70.0 * 0.6,  //敏感型数据
+   .kd = -72.0 * 0.6,  //敏感型数据
 };
 
 //TODO: 调试速度PID
 //不敏感数据
-const double p = 1000.0;
+const double p = 850.0;
 PID pidspeed = 
 {
     .kp = p,
@@ -68,7 +68,7 @@ int Balance_PD(CAR *car) {
     current_pitch = pitch_filter * current_pitch + (1 - pitch_filter) * last_pitch; //滤波公式
     last_pitch = current_pitch; //更新上次角度
 
-    float gx_filter = 0.85; //滤波系数
+    float gx_filter = 0.75; //滤波系数
     float current_gx = car->mpu.mpu_data.gx;
     current_gx = gx_filter * current_gx + (1 - gx_filter) * last_gx; //滤波公式
     last_gx = current_gx; //更新上次角度
