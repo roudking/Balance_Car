@@ -61,14 +61,20 @@ int dead_zone_comp(int pwm, int dz){
 }
 
 int Balance_PD(CAR *car) {
-     static float last_pitch = 0.0; //上次角度
-    float beta = 0.85; //滤波系数
+     static float last_pitch = 0.0,last_gx = 0.0; //上次角度
+    
+    float pitch_filter = 0.85; //滤波系数
     float current_pitch = car->mpu.pitch;
-    current_pitch = beta * current_pitch + (1 - beta) * last_pitch; //滤波公式
+    current_pitch = pitch_filter * current_pitch + (1 - pitch_filter) * last_pitch; //滤波公式
     last_pitch = current_pitch; //更新上次角度
 
-    return (int)position_divAPI_PID_Cal(car->target_angle, current_pitch, car->mpu.mpu_data.gx, &(car->balance_pid));
-}   
+    float gx_filter = 0.85; //滤波系数
+    float current_gx = car->mpu.mpu_data.gx;
+    current_gx = gx_filter * current_gx + (1 - gx_filter) * last_gx; //滤波公式
+    last_gx = current_gx; //更新上次角度
+
+    return (int)position_divAPI_PID_Cal(car->target_angle, current_pitch, current_gx, &(car->balance_pid));
+}
 
 int Speed_PI(CAR *car) {
     //对输入速度进行低通滤波
@@ -101,7 +107,7 @@ void Car_balance(CAR *car) {
     total_pwm = balance_pwm + speed_pwm; //总PWM
 
      //TODO: 删除死区		
-    total_pwm = dead_zone_comp(total_pwm,1000); 
+    total_pwm = dead_zone_comp(total_pwm,400); 
 
     total_pwm = xianfu(total_pwm, -7200, 7200); // 限幅
 

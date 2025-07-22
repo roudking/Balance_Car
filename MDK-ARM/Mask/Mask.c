@@ -3,7 +3,7 @@
 static void Mask_EXTIcallback(void);
 
 CAR car;
-const float machine_zerovalue = 1.0;
+const float machine_zerovalue = -1.5;
 
 void Mask_start(void) {
     //电机初始化
@@ -11,10 +11,12 @@ void Mask_start(void) {
     Driver_creatmotor(&(car.motor2), pidR, rightdriver);
     Driver_init(&(car.motor1));
     Driver_init(&(car.motor2));
+    Debugger_printf("MotorInitCplt\n");
 	
     //mpu6050初始化
     Mpu_creat(&(car.mpu),mpu_config,KalmanX,KalmanY);
 	Mpu_init(&(car.mpu));
+    Debugger_printf("MpuInitCplt\n");
 
     //设置平衡角度
     Car_setBalanceAngle(&car, machine_zerovalue);
@@ -42,6 +44,9 @@ static void Mask_EXTIcallback(void) {
 
     //平衡控制
      Car_balance(&car);
+
+	// Debugger_printf("%.3f\n", car.mpu.pitch);	
+
 
     //清除MPU中断标志位
     Mpu_clearinterrupt(&(car.mpu));	
