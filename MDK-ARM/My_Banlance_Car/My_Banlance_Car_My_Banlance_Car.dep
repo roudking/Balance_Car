@@ -32,7 +32,7 @@ I (..\Core\Inc\usart.h)(0x6863A216)
 I (..\Core\Inc\gpio.h)(0x6863A216)
 I (Mask\Mask.h)(0x6865758F)
 I (System\gpio_it.h)(0x6865239D)
-I (Mask\Car.h)(0x687F9D9A)
+I (Mask\Car.h)(0x687F9DF3)
 I (Driver\Driver.h)(0x6863AAB1)
 I (Driver\Driver_Encoder.h)(0x6861F653)
 I (Driver\Driver_config.h)(0x68662168)
@@ -916,6 +916,34 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x67B9C5C1)
 F (.\System\gpio_it.h)(0x6865239D)()
+F (.\System\my_gpio.c)(0x68130AD7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/my_gpio.o -MMD)
+I (System\my_gpio.h)(0x68130AD3)
+I (..\Core\Inc\gpio.h)(0x6863A216)
+I (..\Core\Inc\main.h)(0x687F9CE4)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x67B9C5C1)
+I (..\Core\Inc\stm32f1xx_hal_conf.h)(0x6863A217)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x67B9C5C1)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x67B9C5C1)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x67B9C5C1)
+I (..\Drivers\CMSIS\Include\core_cm3.h)(0x67B9C5BE)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x67B9C5C1)
+I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x67B9C5C1)
+F (.\System\my_gpio.h)(0x68130AD3)()
 F (.\IMU\mpu6050.c)(0x687F3635)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/mpu6050.o -MMD)
 I (IMU\mpu6050.h)(0x686542C7)
 I (IMU\mpu6050_iic.h)(0x685ED948)
@@ -1012,7 +1040,7 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x67B9C5C1)
 F (.\IMU\mpu6050_iic.h)(0x685ED948)()
-F (.\Mask\Mask.c)(0x687F9417)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/mask.o -MMD)
+F (.\Mask\Mask.c)(0x687FA235)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/mask.o -MMD)
 I (Mask\Mask.h)(0x6865758F)
 I (System\gpio_it.h)(0x6865239D)
 I (..\Core\Inc\gpio.h)(0x6863A216)
@@ -1040,7 +1068,7 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x67B9C5C1)
-I (Mask\Car.h)(0x687F9D9A)
+I (Mask\Car.h)(0x687F9DF3)
 I (Driver\Driver.h)(0x6863AAB1)
 I (Driver\Driver_Encoder.h)(0x6861F653)
 I (Driver\Driver_config.h)(0x68662168)
@@ -1065,7 +1093,7 @@ I (Beep\Beep_config.h)(0x687DE315)
 I (System\my_gpio.h)(0x68130AD3)
 F (.\Mask\Mask.h)(0x6865758F)()
 F (.\Mask\Car.c)(0x687F5AA9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/car.o -MMD)
-I (Mask\Car.h)(0x687F9D9A)
+I (Mask\Car.h)(0x687F9DF3)
 I (Driver\Driver.h)(0x6863AAB1)
 I (Driver\Driver_Encoder.h)(0x6861F653)
 I (Driver\Driver_config.h)(0x68662168)
@@ -1113,7 +1141,7 @@ I (Beep\Beep_gpio.h)(0x686D0999)
 I (Beep\Beep_config.h)(0x687DE315)
 I (System\my_gpio.h)(0x68130AD3)
 I (..\Core\Inc\gpio.h)(0x6863A216)
-F (.\Mask\Car.h)(0x687F9D9A)()
+F (.\Mask\Car.h)(0x687F9DF3)()
 F (.\Beep\Beep.c)(0x686A9C23)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/beep.o -MMD)
 I (Beep\Beep.h)(0x686A9C23)
 I (Beep\Beep_gpio.h)(0x686D0999)
@@ -1145,7 +1173,7 @@ I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x67B9C5C1)
 I (..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x67B9C5C1)
 F (.\Beep\Beep.h)(0x686A9C23)()
-F (.\Beep\Beep_config.c)(0x687DE47B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/beep_config.o -MMD)
+F (.\Beep\Beep_config.c)(0x687FA143)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./Driver -I ./System -I ./Mask -I ./IMU -I ../Middlewares/ST/ARM/DSP/Inc -I ./Beep-I./RTE/_My_Banlance_Car-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/MySoftware/Keil5 MDK/MyKeil5/ARM/PACK/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-D__UVISION_VERSION="541" -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DARM_MATH_CM3-o my_banlance_car/beep_config.o -MMD)
 I (Beep\Beep_config.h)(0x687DE315)
 I (System\my_gpio.h)(0x68130AD3)
 I (..\Core\Inc\gpio.h)(0x6863A216)

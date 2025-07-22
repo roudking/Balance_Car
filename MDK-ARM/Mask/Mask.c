@@ -31,6 +31,8 @@ void Mask_start(void) {
     //设置速度PID
     Car_setSpeedPID(&car, pidspeed);
 
+    // HAL_Delay(1000); //等待一段时间，确保初始化完成
+
     //注册任务回调函数
     exti_register_callback(MASK_EXTI_PIN, Mask_EXTIcallback);
 
@@ -49,7 +51,35 @@ static void Mask_EXTIcallback(void) {
     //平衡控制
      Car_balance(&car);
 
-    Car_setSpeedTarget(&car, 1.3); //设置目标速度
+    //设置目标速度
+    int timer = 4000;
+    static int pc = 0;
+    if(pc < timer){
+    Car_setSpeedTarget(&car, 0.0); //设置目标速度
+    Beep_off(&(car.beeper)); //关闭蜂鸣器
+        pc++;
+    }
+    else if(pc < timer * 2){
+    Car_setSpeedTarget(&car, 1.5); //设置目标速度
+    Beep_on(&(car.beeper)); //开启蜂鸣器
+        pc++;
+    }
+    else if(pc < timer * 3){
+    Car_setSpeedTarget(&car, 0.0); //设置目标速度
+    Beep_off(&(car.beeper)); //关闭蜂鸣器
+        pc++;
+    }
+    else if(pc < timer * 4){
+    Car_setSpeedTarget(&car, -1.5); //设置目标速度
+    Beep_on(&(car.beeper)); //开启蜂鸣器
+        pc++;
+    }
+    else if(pc < timer * 5){
+    Car_setSpeedTarget(&car, 0.0); //设置目标速度
+    Beep_off(&(car.beeper)); //关闭蜂鸣器
+        pc++;
+    } 
+
 
     //清除MPU中断标志位
     Mpu_clearinterrupt(&(car.mpu));	

@@ -650,6 +650,16 @@
               <FileType>5</FileType>
               <FilePath>.\System\gpio_it.h</FilePath>
             </File>
+            <File>
+              <FileName>my_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\my_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>my_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\System\my_gpio.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

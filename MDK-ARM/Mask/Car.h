@@ -10,7 +10,7 @@ typedef struct
 {
     MOTOR motor1;
     MOTOR motor2;
-    Beeper beeper;
+    BEEPER beeper;
 	MPU mpu;
 
     PID balance_pid;

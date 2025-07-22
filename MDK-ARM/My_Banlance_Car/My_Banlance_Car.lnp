@@ -35,6 +35,7 @@
 "my_banlance_car\iic.o"
 "my_banlance_car\my_delay.o"
 "my_banlance_car\gpio_it.o"
+"my_banlance_car\my_gpio.o"
 "my_banlance_car\mpu6050.o"
 "my_banlance_car\mpu6050_config.o"
 "my_banlance_car\mpu6050_iic.o"
