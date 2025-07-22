@@ -111,8 +111,6 @@ void Car_balance(CAR *car) {
 
     total_pwm = xianfu(total_pwm, -7200, 7200); // 限幅
 
-
-
     //电机控制
     Driver_setmotorpwm(&(car->motor1), total_pwm,&(car->motor2), total_pwm);
 }
